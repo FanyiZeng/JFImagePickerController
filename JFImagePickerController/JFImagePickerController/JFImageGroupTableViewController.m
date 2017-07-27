@@ -30,6 +30,7 @@
 	self.navigationItem.title = @"相册";
 	UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
 	self.navigationItem.rightBarButtonItem = cancel;
+    
 }
 
 - (void)cancel{
@@ -39,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
 	self.navigationController.navigationBar.translucent = YES;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];

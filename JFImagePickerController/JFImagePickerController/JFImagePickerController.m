@@ -77,7 +77,7 @@
 	UIBarButtonItem *fix2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 	UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(choiceDone)];
 	[toolbar setItems:@[leftFix, preview, fix, selectNum, fix2, done, rightFix]];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeCount:) name:@"selectdPhotos" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeCount:) name:ASSETHELPER.SelectdPhotosNotificationName object:nil];
 	selectNum.title = [NSString stringWithFormat:@"%ld/%d", (unsigned long)ASSETHELPER.selectdPhotos.count,ASSETHELPER.maxCount];
 }
 

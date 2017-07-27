@@ -52,7 +52,7 @@
 		[UIView animateWithDuration:.3 delay:0 usingSpringWithDamping:.5 initialSpringVelocity:.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 			_numOfSelect.transform = CGAffineTransformIdentity;
 		} completion:nil];
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNum:) name:@"reloadNum" object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadNum:) name:ASSETHELPER.ReloadNumNotificationName object:nil];
 	} else {
 		placeholder.hidden = NO;
 		[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -78,6 +78,7 @@
 	CGPoint location = [tap locationInView:self];
 	if (CGRectContainsPoint(CGRectMake(placeholder.frame.origin.x-5, placeholder.frame.origin.y-5, placeholder.frame.size.width+10, placeholder.frame.size.height+10), location)) {
 		if (self.numOfSelect==nil&&ASSETHELPER.selectdPhotos.count>=ASSETHELPER.maxCount) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.ShowMaxCountAlertNotificationName object:nil];
 			return;
 		}
 		if (self.numOfSelect==nil) {
@@ -107,11 +108,12 @@
 			[ASSETHELPER.selectdAssets removeObjectAtIndex:index];
 			[ASSETHELPER.selectdPhotos removeObjectAtIndex:index];
 			[self selectOfNum:-1];
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"reloadNum" object:nil];
+			[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.ReloadNumNotificationName object:nil];
 		}
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"selectdPhotos" object:nil];
+		[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.SelectdPhotosNotificationName object:nil];
 	} else {
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"showNormalPhotoBrowser" object:_indexPath];
+		[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.ShowNormalPhotoBrowserNotificationName object:_indexPath];
+        
 	}
 }
 

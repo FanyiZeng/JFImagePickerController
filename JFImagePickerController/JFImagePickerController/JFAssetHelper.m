@@ -10,6 +10,10 @@
 
 @implementation JFAssetHelper
 
+- (NSString *)ReloadNumNotificationName{return @"ReloadNumNotificationName.JFImagePicker";}
+- (NSString *)SelectdPhotosNotificationName{return @"SelectdPhotosNotificationName.JFImagePicker";}
+- (NSString *)ShowNormalPhotoBrowserNotificationName{return @"ShowNormalPhotoBrowserNotificationName.JFImagePicker";}
+- (NSString *)ShowMaxCountAlertNotificationName{return @"ShowMaxCountAlertNotificationName.JFImagePicker";}
 
 + (JFAssetHelper *)sharedAssetHelper
 {

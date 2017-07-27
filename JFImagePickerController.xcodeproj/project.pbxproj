@@ -229,6 +229,7 @@
 				TargetAttributes = {
 					C4BC0E921B463C4E00162734 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 2JBKB386B9;
 					};
 					C4BC0EAB1B463C4F00162734 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -416,9 +417,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2JBKB386B9;
 				INFOPLIST_FILE = JFImagePickerController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Johnil.JFImagePickerController.zfy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -427,9 +430,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2JBKB386B9;
 				INFOPLIST_FILE = JFImagePickerController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Johnil.JFImagePickerController.zfy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

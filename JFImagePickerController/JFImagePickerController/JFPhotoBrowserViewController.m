@@ -134,8 +134,8 @@
 				[ASSETHELPER.selectdPhotos removeObjectAtIndex:num.intValue];
 				[ASSETHELPER.selectdAssets removeObjectAtIndex:num.intValue];
 			}
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"reloadNum" object:nil];
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"selectdPhotos" object:nil];
+			[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.ReloadNumNotificationName object:nil];
+			[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.SelectdPhotosNotificationName object:nil];
 		}
 	}
 }
@@ -198,7 +198,7 @@
 			[ASSETHELPER.selectdAssets removeObjectAtIndex:index];
 			[ASSETHELPER.selectdPhotos removeObjectAtIndex:index];
 			[[_delegate cellForRow:page] selectOfNum:-1];
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"reloadNum" object:nil];
+			[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.ReloadNumNotificationName object:nil];
 		}
 	} else {
 		if ([placeholder.backgroundColor isEqual:[[UIColor blackColor] colorWithAlphaComponent:.1]]) {
@@ -215,7 +215,7 @@
 			[placeholder setTitle:@"" forState:UIControlStateNormal];
 		}
 	}
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectdPhotos" object:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.SelectdPhotosNotificationName object:nil];
 }
 
 - (void)setDelegate:(id)delegate{

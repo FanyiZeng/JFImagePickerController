@@ -37,7 +37,7 @@
 	self.navigationItem.title = [[ASSETHELPER.assetGroups objectAtIndex:ASSETHELPER.currentGroupIndex] valueForProperty:ALAssetsGroupPropertyName];
 	UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
 	self.navigationItem.rightBarButtonItem = cancel;
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNormalPhotoBrowser:) name:@"showNormalPhotoBrowser" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNormalPhotoBrowser:) name:ASSETHELPER.ShowNormalPhotoBrowserNotificationName object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

@@ -19,6 +19,18 @@
 
 @interface JFAssetHelper : NSObject
 
+@property(nonatomic,copy,readonly)NSString *ShowNormalPhotoBrowserNotificationName;
+@property(nonatomic,copy,readonly)NSString *SelectdPhotosNotificationName;
+@property(nonatomic,copy,readonly)NSString *ReloadNumNotificationName;
+
+/**
+ 选择到最大数量的图片后,如果继续点击会触发这个通知
+ */
+@property(nonatomic,copy,readonly)NSString *ShowMaxCountAlertNotificationName;
+
+
+
+
 - (void)initAsset;
 
 @property (nonatomic, strong)   ALAssetsLibrary			*assetsLibrary;
@@ -63,4 +75,6 @@
 - (ALAssetsGroup *)getGroupAtIndex:(NSInteger)nIndex;
 
 @end
-
+typedef enum {
+    ShowNormalPhotoBrowser
+} JFImagePickerNotificationName;
