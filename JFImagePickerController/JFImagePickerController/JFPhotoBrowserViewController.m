@@ -68,16 +68,21 @@
     if ([self.navigationController respondsToSelector:@selector(setLeftTitle:)]){
         [(JFImagePickerController *)self.navigationController setLeftTitle:@"取消"];
     }
-    placeholder = [UIButton buttonWithType:UIButtonTypeCustom];
-    placeholder.frame = CGRectMake(0, 0, 26, 26);
-    placeholder.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.1];
-    placeholder.layer.cornerRadius = 13;
-    placeholder.layer.borderColor = [UIColor whiteColor].CGColor;
-    placeholder.layer.borderWidth = 1;
-    placeholder.titleLabel.font = [UIFont systemFontOfSize:15];
-    [placeholder addTarget:self action:@selector(selectPhoto) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:placeholder];
-    self.navigationItem.rightBarButtonItem = item;
+    if (self.rightItems != nil){
+        self.navigationItem.rightBarButtonItems = _rightItems;
+    }else{
+        placeholder = [UIButton buttonWithType:UIButtonTypeCustom];
+        placeholder.frame = CGRectMake(0, 0, 26, 26);
+        placeholder.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.1];
+        placeholder.layer.cornerRadius = 13;
+        placeholder.layer.borderColor = [UIColor whiteColor].CGColor;
+        placeholder.layer.borderWidth = 1;
+        placeholder.titleLabel.font = [UIFont systemFontOfSize:15];
+        [placeholder addTarget:self action:@selector(selectPhoto) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:placeholder];
+        self.navigationItem.rightBarButtonItem = item;
+    }
+    
     CGFloat pageWidth = photosView.frame.size.width;
     NSInteger page = floor((photosView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 

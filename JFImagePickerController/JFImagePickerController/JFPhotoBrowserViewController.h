@@ -13,8 +13,13 @@
 
 - (JFPhotoBrowserViewController *)initWithPreview;
 - (JFPhotoBrowserViewController *)initWithNormal;
+
 @property (nonatomic, weak) id delegate;
 
+/**
+ 设置这个 RightItems 来接受自定义菜单消息
+ */
+@property(nonatomic,strong)NSArray<UIBarButtonItem *> *rightItems;
 @end
 
 @protocol JDPhotoBrowserDelegate <NSObject>
