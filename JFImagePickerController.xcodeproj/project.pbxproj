@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		936AF9B91F2980D400AA442C /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936AF9B81F2980D400AA442C /* Photos.framework */; };
 		C4BC0E991B463C4E00162734 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BC0E981B463C4E00162734 /* main.m */; };
 		C4BC0E9C1B463C4E00162734 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BC0E9B1B463C4E00162734 /* AppDelegate.m */; };
 		C4BC0E9F1B463C4E00162734 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BC0E9E1B463C4E00162734 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		936AF9B81F2980D400AA442C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C4BC0E931B463C4E00162734 /* JFImagePickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFImagePickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BC0E971B463C4E00162734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4BC0E981B463C4E00162734 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936AF9B91F2980D400AA442C /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		936AF9B71F2980D400AA442C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				936AF9B81F2980D400AA442C /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C4BC0E8A1B463C4E00162734 = {
 			isa = PBXGroup;
 			children = (
 				C4BC0E951B463C4E00162734 /* JFImagePickerController */,
 				C4BC0EAF1B463C4F00162734 /* JFImagePickerControllerTests */,
 				C4BC0E941B463C4E00162734 /* Products */,
+				936AF9B71F2980D400AA442C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

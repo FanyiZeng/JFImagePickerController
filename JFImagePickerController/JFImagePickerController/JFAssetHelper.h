@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#define APP_COLOR [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]
+#define APP_COLOR  [UIColor colorWithRed:57/255.0 green:69/255.0 blue:90/255.0 alpha:1/1.0]
 
 #define ASSETHELPER    [JFAssetHelper sharedAssetHelper]
 
