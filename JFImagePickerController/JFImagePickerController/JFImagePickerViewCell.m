@@ -78,7 +78,6 @@
 	CGPoint location = [tap locationInView:self];
 	if (CGRectContainsPoint(CGRectMake(placeholder.frame.origin.x-5, placeholder.frame.origin.y-5, placeholder.frame.size.width+10, placeholder.frame.size.height+10), location)) {
 		if (self.numOfSelect==nil&&ASSETHELPER.selectdPhotos.count>=ASSETHELPER.maxCount) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:ASSETHELPER.ShowMaxCountAlertNotificationName object:nil];
 			return;
 		}
 		if (self.numOfSelect==nil) {

@@ -65,7 +65,9 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [(JFImagePickerController *)self.navigationController setLeftTitle:@"取消"];
+    if ([self.navigationController respondsToSelector:@selector(setLeftTitle:)]){
+        [(JFImagePickerController *)self.navigationController setLeftTitle:@"取消"];
+    }
     placeholder = [UIButton buttonWithType:UIButtonTypeCustom];
     placeholder.frame = CGRectMake(0, 0, 26, 26);
     placeholder.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.1];
