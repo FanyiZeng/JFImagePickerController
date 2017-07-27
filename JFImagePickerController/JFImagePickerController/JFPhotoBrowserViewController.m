@@ -108,9 +108,13 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
 	if (!isBrowser) {
 		if (ASSETHELPER.selectdPhotos.count>0) {
-			[(JFImagePickerController *)self.navigationController setLeftTitle:@"预览"];
+            if ([self.navigationController respondsToSelector:@selector(setLeftTitle:)]){
+                [(JFImagePickerController *)self.navigationController setLeftTitle:@"预览"];
+            }
 		} else {
-			[(JFImagePickerController *)self.navigationController setLeftTitle:@""];
+            if ([self.navigationController respondsToSelector:@selector(setLeftTitle:)]){
+                [(JFImagePickerController *)self.navigationController setLeftTitle:@""];
+            }
 		}
 		if (isPreview) {
 			NSMutableArray *needDelete = [NSMutableArray array];
