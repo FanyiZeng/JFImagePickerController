@@ -35,6 +35,11 @@
 
 + (JFAssetHelper *)sharedAssetHelper;
 
+/**
+ 最多选择几个
+ */
+@property(nonatomic,assign)int maxCount;
+
 // get album list from asset
 - (void)getGroupList:(void (^)(NSArray *))result;
 // get photos from specific album with ALAssetsGroup object

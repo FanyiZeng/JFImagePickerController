@@ -91,6 +91,7 @@
 - (void)pickPhotos{
     JFImagePickerController *picker = [[JFImagePickerController alloc] initWithRootViewController:nil];
     picker.pickerDelegate = self;
+    ASSETHELPER.maxCount = 3;
     [self presentViewController:picker animated:YES completion:nil];
 }
 

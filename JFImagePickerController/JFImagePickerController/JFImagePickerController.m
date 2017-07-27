@@ -63,7 +63,8 @@
             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
         }
     });
-    self.navigationBar.backgroundColor =  [UIColor colorWithRed:57/255.0 green:69/255.0 blue:90/255.0 alpha:1/1.0];
+    // 导航栏颜色
+    self.navigationBar.backgroundColor = APP_COLOR;
 	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height-44, [UIScreen mainScreen].bounds.size.width, 44)];
 	toolbar.tintColor = [UIColor whiteColor];
 	toolbar.barStyle = UIBarStyleBlack;
@@ -72,12 +73,12 @@
 	UIBarButtonItem *rightFix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 	preview = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(preview)];
 	UIBarButtonItem *fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-	selectNum = [[UIBarButtonItem alloc] initWithTitle:@"0/9" style:UIBarButtonItemStylePlain target:nil action:nil];
+	selectNum = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"0/%d",ASSETHELPER.maxCount] style:UIBarButtonItemStylePlain target:nil action:nil];
 	UIBarButtonItem *fix2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 	UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(choiceDone)];
 	[toolbar setItems:@[leftFix, preview, fix, selectNum, fix2, done, rightFix]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeCount:) name:@"selectdPhotos" object:nil];
-	selectNum.title = [NSString stringWithFormat:@"%ld/9", (unsigned long)ASSETHELPER.selectdPhotos.count];
+	selectNum.title = [NSString stringWithFormat:@"%ld/%d", (unsigned long)ASSETHELPER.selectdPhotos.count,ASSETHELPER.maxCount];
 }
 
 - (void)setLeftTitle:(NSString *)title{
@@ -89,7 +90,7 @@
 }
 
 - (void)changeCount:(NSNotification *)notifi{
-	selectNum.title = [NSString stringWithFormat:@"%ld/9", (unsigned long)ASSETHELPER.selectdPhotos.count];
+	selectNum.title = [NSString stringWithFormat:@"%ld/%d", (unsigned long)ASSETHELPER.selectdPhotos.count,ASSETHELPER.maxCount];
 	if (![preview.title isEqualToString:@"取消"]) {
 		if (ASSETHELPER.selectdPhotos.count>0) {
 			preview.title = @"预览";
