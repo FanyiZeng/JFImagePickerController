@@ -49,6 +49,10 @@
     photosList.alwaysBounceVertical = YES;
     [self.view addSubview:photosList];
     [photosList registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"imagePickerCell"];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(alert) name:ASSETHELPER.ShowMaxCountAlertNotificationName object:nil];
+}
+- (void)alert{
+    NSLog(@"alert");
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
