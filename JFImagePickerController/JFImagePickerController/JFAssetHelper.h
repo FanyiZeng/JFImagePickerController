@@ -19,19 +19,24 @@
 
 @interface JFAssetHelper : NSObject
 
-@property(nonatomic,copy,readonly)NSString *ShowNormalPhotoBrowserNotificationName;
-@property(nonatomic,copy,readonly)NSString *SelectdPhotosNotificationName;
-@property(nonatomic,copy,readonly)NSString *ReloadNumNotificationName;
+
+
+- (void)initAsset;
+
+@property(readonly)NSString *ShowNormalPhotoBrowserNotificationName;
+@property(readonly)NSString *SelectdPhotosNotificationName;
+@property(readonly)NSString *ReloadNumNotificationName;
 
 /**
  选择到最大数量的图片后,如果继续点击会触发这个通知
  */
-@property(nonatomic,copy,readonly)NSString *ShowMaxCountAlertNotificationName;
+@property(readonly)NSString *ShowMaxCountAlertNotificationName;
 
+/**
+ 最多选择几个
+ */
+@property(nonatomic,assign)int maxCount;
 
-
-
-- (void)initAsset;
 
 @property (nonatomic, strong)   ALAssetsLibrary			*assetsLibrary;
 @property (nonatomic, strong)   NSMutableArray          *assetPhotos;
@@ -47,10 +52,6 @@
 
 + (JFAssetHelper *)sharedAssetHelper;
 
-/**
- 最多选择几个
- */
-@property(nonatomic,assign)int maxCount;
 
 // get album list from asset
 - (void)getGroupList:(void (^)(NSArray *))result;
