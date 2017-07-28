@@ -41,7 +41,7 @@
 {
     [super viewDidLoad];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
-	self.navigationController.navigationBar.translucent = YES;
+	self.navigationController.navigationBar.translucent = NO;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.tableView.tableFooterView = [UIView new];

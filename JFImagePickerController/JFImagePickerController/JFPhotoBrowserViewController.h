@@ -20,6 +20,13 @@
  设置这个 RightItems 来接受自定义菜单消息
  */
 @property(nonatomic,strong)NSArray<UIBarButtonItem *> *rightItems;
+
+
+/**
+ 删除图片时清除视图
+ */
+- (void)deletePage:(NSInteger)page;
+
 @end
 
 @protocol JDPhotoBrowserDelegate <NSObject>
