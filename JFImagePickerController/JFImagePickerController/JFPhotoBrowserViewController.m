@@ -318,7 +318,14 @@
         photoView.tag = page+1;
         photoView.photoDelegate = self;
         [photosView addSubview:photoView];
-        [photoView loadImage:[_delegate assetWithIndex:page fromPhotoBrowser:self]];
+        photoView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+        ALAsset *asset = [_delegate assetWithIndex:page fromPhotoBrowser:self];
+        if (asset != nil){
+            [photoView loadImage:asset];
+        }else{
+            [_delegate setImage:photoView WithIndex:page fromPhotoBrowser:self];
+            [photoView progressImage];
+        }
     } else if (photoView.hidden) {
         photoView.hidden = NO;
     }

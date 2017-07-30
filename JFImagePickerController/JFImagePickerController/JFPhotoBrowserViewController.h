@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "JFImagePickerViewCell.h"
+#import "JFPhotoView.h"
 @interface JFPhotoBrowserViewController : UIViewController
 
 - (JFPhotoBrowserViewController *)initWithPreview;
@@ -35,6 +36,7 @@
 - (NSInteger)numOfPhotosFromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 - (NSInteger)currentIndexFromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 @optional
+- (void)setImage:(JFPhotoView *)photoView WithIndex:(NSInteger)index fromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 - (void)photoBrowser:(JFPhotoBrowserViewController *)browser didShowPage:(NSInteger)page;
 - (JFImagePickerViewCell *)cellForRow:(NSInteger)row;
 
