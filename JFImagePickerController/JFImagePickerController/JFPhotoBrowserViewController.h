@@ -36,6 +36,7 @@
 - (NSInteger)numOfPhotosFromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 - (NSInteger)currentIndexFromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 @optional
+- (void)willDeletePage:(NSInteger)page;
 - (void)setImage:(JFPhotoView *)photoView WithIndex:(NSInteger)index fromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 - (void)photoBrowser:(JFPhotoBrowserViewController *)browser didShowPage:(NSInteger)page;
 - (JFImagePickerViewCell *)cellForRow:(NSInteger)row;

@@ -357,10 +357,16 @@
     }
 }
 
+
+
 - (void)deletePage:(NSInteger)page{
+    if ([self.delegate respondsToSelector:@selector(willDeletePage:)]){
+        [self.delegate willDeletePage:page];
+    }
     [self clearScrollViewWithPage:page];
-    [self setDelegate:self.delegate];
     [self clearMemory];
+    [self setDelegate:self.delegate];
 }
+
 
 @end
