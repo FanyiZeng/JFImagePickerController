@@ -24,7 +24,7 @@
 
 
 /**
- 删除图片时清除视图
+ 界面的删除按钮触发该方法.
  */
 - (void)deletePage:(NSInteger)page;
 
@@ -36,8 +36,12 @@
 - (NSInteger)numOfPhotosFromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 - (NSInteger)currentIndexFromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
 @optional
-- (void)willDeletePage:(NSInteger)page;
 - (void)setImage:(JFPhotoView *)photoView WithIndex:(NSInteger)index fromPhotoBrowser:(JFPhotoBrowserViewController *)browser;
+
+/**
+ 代理对象可以在该方法中进行数据的删除,随后界面根据代理数据进行更新
+ */
+- (void)photoBrowser:(JFPhotoBrowserViewController *)browser willDeletePage:(NSInteger)page;
 - (void)photoBrowser:(JFPhotoBrowserViewController *)browser didShowPage:(NSInteger)page;
 - (JFImagePickerViewCell *)cellForRow:(NSInteger)row;
 

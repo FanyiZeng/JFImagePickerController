@@ -360,8 +360,8 @@
 
 
 - (void)deletePage:(NSInteger)page{
-    if ([self.delegate respondsToSelector:@selector(willDeletePage:)]){
-        [self.delegate willDeletePage:page];
+    if ([self.delegate respondsToSelector:@selector(photoBrowser:willDeletePage:)]){
+        [self.delegate photoBrowser:self willDeletePage:page];
     }
     [self clearScrollViewWithPage:page];
     [self clearMemory];
